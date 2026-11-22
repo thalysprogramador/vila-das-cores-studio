@@ -1,0 +1,46 @@
+================================================================================
+KIT DE IDENTIDADE OFICIAL — YOUTUBE KIDS STUDIO
+Canal: Tico & A Vila das Cores
+================================================================================
+
+1. NOME DO CANAL:
+   Tico & A Vila das Cores
+
+2. HANDLE SUGERIDO (@):
+   @TicoVilaDasCores
+   (Alternativas se indisponível: @VilaDasCoresOficial, @TurmaDoTicoOficial)
+
+3. DESCRIÇÃO DO CANAL (Pronta para colar no YouTube Studio):
+   🌈 Bem-vindo à Vila das Cores! 🐻🐰🦖🦉
+
+   Aqui a diversão e o aprendizado caminham de mãos dadas! Acompanhe as aventuras diárias do ursinho curioso Tico, da coelhinha artista Lili, do dinossaurinho saltitante Dino Bip e da sábia Dona Coruja Nina.
+
+   Em cada episódio animado, as crianças de 2 a 5 anos aprendem de forma leve, alegre e segura:
+   ✨ Cores, números e formas
+   ✨ Amizade, carinho e trabalho em equipe
+   ✨ Criatividade, música e curiosidade saudável
+
+   Feito com muito amor para toda a família assistir junta na TV, tablet ou celular!
+   Inscreva-se na Vila das Cores e venha brincar com a nossa turma todos os dias! 💛❤️💙
+
+4. PALAVRAS-CHAVE DO CANAL (YouTube Studio > Configurações > Canal):
+   desenho infantil, desenho animado em portugues, serie infantil, aprender cores, aprender numeros, desenho para criancas 2 a 5 anos, tico e a vila das cores, desenho educativo, animacao infantil brasileira, historias infantis
+
+5. CONFIGURAÇÃO OBRIGATÓRIA DE PÚBLICO (COPPA):
+   YouTube Studio > Configurações > Canal > Configurações avançadas:
+   -> Marcar: "Sim, configurar este canal como conteúdo para crianças."
+
+6. ARQUIVOS PRONTOS NESTA PASTA (branding/):
+   - logo_canal_800x800.png       -> Foto de perfil do canal (800x800 px)
+   - banner_canal_2560x1440.png   -> Banner oficial TV + Desktop + Celular (2560x1440 px)
+   - watermark_150x150.png        -> Marca d'água dos vídeos (150x150 px transparente)
+   - thumb_ep01_1280x720.png      -> Thumbnail padrão oficial (Episódio 1)
+
+7. PALETA OFICIAL DA MARCA (HEX):
+   - Azul Céu:     #38B6FF
+   - Amarelo Sol:  #FFD43B
+   - Vermelho Cor: #FF4D6D
+   - Verde Vila:   #2ED573
+   - Lilás Nina:   #9B6BFF
+   - Contorno:     #3D261C
+================================================================================

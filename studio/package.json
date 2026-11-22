@@ -1,0 +1,22 @@
+{
+  "name": "vila-das-cores-studio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Estúdio Remotion Full HD 1080p + Identidade Visual — Tico & A Vila das Cores",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render:ep": "remotion render src/index.ts Episode1080p ../output/episode_1080p.mp4 --codec=h264 --crf=19"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.544",
+    "@remotion/google-fonts": "4.0.544",
+    "@remotion/shapes": "4.0.544",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.544"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.0",
+    "typescript": "5.8.3"
+  }
+}

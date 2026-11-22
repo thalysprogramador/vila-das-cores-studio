@@ -1,0 +1,176 @@
+{
+  "series_id": "tico_vila_das_cores",
+  "series_title": "Tico & A Vila das Cores",
+  "channel_handle": "@TicoVilaDasCores",
+  "tagline": "Aventuras, cores e amizade todos os dias!",
+  "target_age": "2-5",
+  "language": "pt-BR",
+  "format": {
+    "resolution": "1920x1080",
+    "fps": 24,
+    "target_duration_minutes": 6,
+    "made_for_kids": true
+  },
+  "brand_palette": {
+    "sky_top": "#38B6FF",
+    "sky_bottom": "#D6F4FF",
+    "sun_gold": "#FFD43B",
+    "coral_red": "#FF4D6D",
+    "meadow_green": "#2ED573",
+    "lavender": "#9B6BFF",
+    "warm_outline": "#3D261C",
+    "cream_card": "#FFFDF7"
+  },
+  "characters": {
+    "tico": {
+      "display_name": "Tico",
+      "species": "Ursinho",
+      "age_vibe": 4,
+      "role": "Protagonista curioso e acolhedor",
+      "personality": "Empolgado, gentil, curioso, adora conversar diretamente com a criança em casa.",
+      "catchphrase": "Vamos descobrir juntos, amiguinho!",
+      "visual_lock": {
+        "fur_main": "#E2A35E",
+        "fur_shadow": "#C5813E",
+        "snout_belly": "#FFF1D6",
+        "overalls": "#3B9EFF",
+        "overalls_pocket": "#267FE0",
+        "star_badge": "#FFD43B"
+      },
+      "voice": {
+        "provider": "gemini_tts",
+        "gemini_model": "gemini-2.5-flash-preview-tts",
+        "gemini_voice": "Puck",
+        "gemini_pitch": 1.09,
+        "gemini_formant": "shifted",
+        "acting_direction": "Fale em português do Brasil como um ursinho menino de 5 anos gentil, calmo, carinhoso e curioso, com voz masculina jovem bem limpinha, clara e amigável.",
+        "fallback_edge_voice": "pt-BR-AntonioNeural",
+        "fallback_pitch": 1.14,
+        "fallback_formant": "shifted"
+      },
+      "introduced_in_episode": 1,
+      "active": true
+    },
+    "lili": {
+      "display_name": "Lili",
+      "species": "Coelhinha",
+      "age_vibe": 4,
+      "role": "Artista criativa e observadora",
+      "personality": "Inteligente, carinhosa, ama cores, pintura, flores e encontrar soluções em equipe.",
+      "catchphrase": "Tive uma ideia brilhante!",
+      "visual_lock": {
+        "fur_main": "#FFF9F2",
+        "fur_shadow": "#F0E2D3",
+        "ear_inner": "#FFB3C6",
+        "dress": "#FF5C7A",
+        "dress_dots": "#FFE680",
+        "bow": "#2BCBBA"
+      },
+      "voice": {
+        "provider": "gemini_tts",
+        "gemini_model": "gemini-2.5-flash-preview-tts",
+        "gemini_voice": "Leda",
+        "acting_direction": "Fale em português do Brasil como uma coelhinha criança de 4 anos muito doce, criativa, meiga e expressiva. Tom suave, claro e animado para crianças pequenas.",
+        "fallback_edge_voice": "pt-BR-ThalitaMultilingualNeural",
+        "fallback_pitch": 1.15,
+        "fallback_formant": "shifted"
+      },
+      "introduced_in_episode": 1,
+      "active": true
+    },
+    "dino": {
+      "display_name": "Dino Bip",
+      "species": "Dinossaurinho",
+      "age_vibe": 3,
+      "role": "Amigo brincalhão e engraçado",
+      "personality": "Trapalhão, fofo, adora pular, comer frutinhas e biscoitos, sempre faz a turma rir.",
+      "catchphrase": "Raaawr-bip!",
+      "visual_lock": {
+        "skin_main": "#2ECC71",
+        "skin_shadow": "#20A95B",
+        "belly": "#FFEAA7",
+        "spikes": "#FF9F43",
+        "cap": "#FF4757"
+      },
+      "voice": {
+        "provider": "gemini_tts",
+        "gemini_model": "gemini-3.8-flash-tts",
+        "gemini_voice": "Fenrir",
+        "gemini_pitch": 1.28,
+        "gemini_formant": "shifted",
+        "acting_direction": "Fale em português do Brasil bem rapidinho, saltitante e exageradamente animado como um dinossaurinho bebê travesso e atrapalhado de desenho animado! Voz engraçada, cheia de energia e risadinhas!",
+        "fallback_edge_voice": "pt-BR-AntonioNeural",
+        "fallback_pitch": 1.30,
+        "fallback_formant": "shifted"
+      },
+      "introduced_in_episode": 1,
+      "active": true
+    },
+    "nina": {
+      "display_name": "Dona Coruja Nina",
+      "species": "Coruja",
+      "age_vibe": 40,
+      "role": "Guia sábia e narradora acolhedora",
+      "personality": "Calma, paciente, amorosa, incentiva a criança em casa a contar, observar cores e trabalhar em equipe.",
+      "catchphrase": "Huhu! Que descoberta maravilhosa!",
+      "visual_lock": {
+        "feathers_main": "#9B6BFF",
+        "feathers_shadow": "#7B4CE0",
+        "belly": "#FBF2FF",
+        "glasses": "#F7B731",
+        "beak": "#FA8231"
+      },
+      "voice": {
+        "provider": "gemini_tts",
+        "gemini_model": "gemini-2.5-flash-preview-tts",
+        "gemini_voice": "Kore",
+        "acting_direction": "Fale em português do Brasil como uma coruja sábia e muito carinhosa, com voz calorosa de contadora de histórias infantil de TV. Ritmo calmo, pausas gentis e dicção impecável.",
+        "fallback_edge_voice": "pt-BR-ThalitaMultilingualNeural",
+        "fallback_pitch": 0.96,
+        "fallback_formant": "preserved"
+      },
+      "introduced_in_episode": 1,
+      "active": true
+    }
+  },
+  "future_character_slots": [
+    {
+      "id": "pipoca",
+      "display_name": "Pipoca",
+      "species": "Pintinho/Dragãozinho que nasce do Ovo Misterioso",
+      "planned_episode": 2,
+      "gemini_voice": "Zephyr"
+    },
+    {
+      "id": "tarta",
+      "display_name": "Vovô Tarta",
+      "species": "Tartaruga jardineira",
+      "planned_episode": 5,
+      "gemini_voice": "Orus"
+    },
+    {
+      "id": "bidu",
+      "display_name": "Pingo",
+      "species": "Cachorrinho carteiro",
+      "planned_episode": 8,
+      "gemini_voice": "Aoede"
+    }
+  ],
+  "locations": [
+    "plaza_grey",
+    "plaza_rainbow",
+    "garden_red",
+    "sunflower_yellow",
+    "pond_blue",
+    "forest_mystery",
+    "starry_night"
+  ],
+  "educational_pillars": [
+    "Cores primárias e secundárias",
+    "Contagem de 1 a 5 (e depois até 10)",
+    "Formas geométricas básicas",
+    "Emoções saudáveis (calma, alegria, coragem, empatia)",
+    "Trabalho em equipe e gentileza",
+    "Animais e natureza"
+  ]
+}

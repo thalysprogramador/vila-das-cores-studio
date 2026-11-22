@@ -1,0 +1,64 @@
+name: Tico & A Vila das Cores — Episódio Diário 1080p
+
+on:
+  # Ative o cron abaixo quando estiver pronto para publicação diária automática!
+  # schedule:
+  #   - cron: '0 13 * * *' # Todo dia às 10h00 (horário de Brasília)
+  workflow_dispatch:
+    inputs:
+      privacy:
+        description: "Privacidade do vídeo (public, unlisted, private)"
+        required: false
+        default: "unlisted"
+
+permissions:
+  contents: write
+
+jobs:
+  produce-and-publish-kids-episode:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+
+    steps:
+      - name: Checkout Novo Repositório Isolado
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install FFmpeg & Chromium Deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg libnss3 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 libgbm1 libasound2t64 || \
+          sudo apt-get install -y ffmpeg libnss3 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 libgbm1
+
+      - name: Install Python & Remotion Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          cd studio && npm install --no-audit --no-fund
+
+      - name: Produce 1080p Episode + 2 Shorts & Upload to YouTube Kids
+        env:
+          KIDS_GEMINI_API_KEY: ${{ secrets.KIDS_GEMINI_API_KEY }}
+          KIDS_GEMINI_API_KEY_2: ${{ secrets.KIDS_GEMINI_API_KEY_2 }}
+          KIDS_GEMINI_API_KEY_3: ${{ secrets.KIDS_GEMINI_API_KEY_3 }}
+          KIDS_YOUTUBE_TOKEN_B64: ${{ secrets.KIDS_YOUTUBE_TOKEN_B64 }}
+          KIDS_YOUTUBE_TOKEN_2_B64: ${{ secrets.KIDS_YOUTUBE_TOKEN_2_B64 }}
+          KIDS_SEASON1_PLAYLIST_ID: ${{ secrets.KIDS_SEASON1_PLAYLIST_ID }}
+        run: |
+          python -u pipeline/run_episode.py --upload --privacy "${{ github.event.inputs.privacy || 'public' }}"
+
+      - name: Save Series Memory (Continuidade entre Episódios)
+        run: |
+          git config user.name "VilaDasCores Bot"
+          git config user.email "bot@viladascores.local"
+          git add data/series_memory.json
+          git diff --staged --quiet || (git commit -m "chore: memória atualizada após novo episódio" && git push)

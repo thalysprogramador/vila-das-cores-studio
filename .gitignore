@@ -1,0 +1,20 @@
+# Secrets (NUNCA versionar!)
+.env
+_kids_secrets/
+client_secret_kids.json
+*.token
+*.b64
+
+# Arquivos pesados temporários e renders
+_tmp_work/
+output/
+*.mp4
+*.wav
+*.mp3
+!branding/*.png
+
+# Python / Node
+__pycache__/
+*.pyc
+studio/node_modules/
+studio/.remotion/
