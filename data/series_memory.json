@@ -1,7 +1,7 @@
 {
   "season": 1,
-  "last_episode_number": 1,
-  "next_episode_hook": "No próximo episódio, a turma vai encontrar um ovo colorido misterioso na floresta!",
+  "last_episode_number": 2,
+  "next_episode_hook": "No próximo episódio, o Dino Bip perde seu boné vermelho num dia de vento!",
   "episodes_history": [
     {
       "ep": 1,
@@ -14,6 +14,18 @@
         "2alZPV5NHtE"
       ],
       "created_at": "2026-11-22T11:01:48.830798+00:00"
+    },
+    {
+      "ep": 2,
+      "title": "O Ovo Colorido da Floresta!",
+      "summary": "Tico, Lili e Dino encontram um ovo misterioso na floresta e aprendem sobre formas geométricas enquanto esperam pacientemente pelo seu nascimento. Dona Nina ajuda a turma a cuidar do ovo com carinho e atenção.",
+      "lesson": "Formas (círculo, quadrado, triângulo), paciência e cuidado com os amigos",
+      "youtube_id": "p7oanupEJ88",
+      "short_ids": [
+        "Ap5uCrQhqd8",
+        "m5KsgUHYRTI"
+      ],
+      "created_at": "2026-11-23T10:41:32.901060+00:00"
     }
   ],
   "used_lessons": [],
