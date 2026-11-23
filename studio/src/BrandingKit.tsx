@@ -437,9 +437,10 @@ export const BrandingWatermark: React.FC = () => (
 // =============================================================================
 // 4. THUMBNAIL PADRÃO DE ALTO CTR (1280 x 720 px — EPISÓDIO 1 / TEMPLATE)
 // =============================================================================
-export const EpisodeThumb: React.FC<{ episodeNumber?: number; badgeText?: string }> = ({
+export const EpisodeThumb: React.FC<{ episodeNumber?: number; badgeText?: string; subText?: string }> = ({
   episodeNumber = 1,
   badgeText = "CADÊ AS CORES?!",
+  subText = "VILA DAS CORES!",
 }) => (
   <AbsoluteFill>
     <svg width={1280} height={720} viewBox="0 0 1280 720">
@@ -517,8 +518,8 @@ export const EpisodeThumb: React.FC<{ episodeNumber?: number; badgeText?: string
       </g>
 
       {/* Texto gigante de alto impacto no topo direito */}
-      <StickerText text={badgeText} x={895} y={168} size={86} fill="#FF4757" whiteBorder={26} darkBorder={8} />
-      <RainbowStickerWord text="ARCO-ÍRIS!" cx={900} y={258} size={78} whiteBorder={24} darkBorder={7.5} />
+      <StickerText text={badgeText} x={895} y={168} size={82} fill="#FF4757" whiteBorder={26} darkBorder={8} />
+      <RainbowStickerWord text={subText} cx={900} y={258} size={72} whiteBorder={24} darkBorder={7.5} />
     </svg>
   </AbsoluteFill>
 );

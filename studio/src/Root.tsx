@@ -54,7 +54,8 @@ export const RemotionRoot: React.FC = () => {
         height={720}
         defaultProps={{
           episodeNumber: timeline.episodeNumber || 1,
-          badgeText: timeline.thumbnailBadge || "CADÊ AS CORES?!",
+          badgeText: timeline.thumbnailBadge || "NOVA AVENTURA!",
+          subText: (timeline as unknown as { thumbnailSub?: string }).thumbnailSub || "VILA DAS CORES!",
         }}
       />
     </>
