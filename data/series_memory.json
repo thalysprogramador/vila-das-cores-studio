@@ -1,7 +1,7 @@
 {
   "season": 1,
-  "last_episode_number": 3,
-  "next_episode_hook": "No próximo episódio, a Lili organiza a Grande Festa das Frutas!",
+  "last_episode_number": 4,
+  "next_episode_hook": "No próximo episódio, chega a noite estrelada na Vila das Cores!",
   "episodes_history": [
     {
       "ep": 1,
@@ -38,6 +38,18 @@
         "Xla3rfYo6fo"
       ],
       "created_at": "2026-11-24T10:53:30.884916+00:00"
+    },
+    {
+      "ep": 4,
+      "title": "A Grande Festa das Frutas Coloridas!",
+      "summary": "Lili organiza um piquenique especial e a turma descobre que as frutas têm as cores do arco-íris. Com a ajuda da Dona Nina, todos aprendem a importância de comer bem e dividir as delícias com os amigos.",
+      "lesson": "Alimentação saudável, cores das frutas e dividir com os amigos",
+      "youtube_id": "UOs93wI71ps",
+      "short_ids": [
+        "sJOt-KRVyOs",
+        "ppT24nvsXFs"
+      ],
+      "created_at": "2026-11-25T11:05:41.284991+00:00"
     }
   ],
   "used_lessons": [],
