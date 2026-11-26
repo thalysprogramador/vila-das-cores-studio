@@ -1,7 +1,7 @@
 {
   "season": 1,
-  "last_episode_number": 4,
-  "next_episode_hook": "No próximo episódio, chega a noite estrelada na Vila das Cores!",
+  "last_episode_number": 5,
+  "next_episode_hook": "No próximo episódio, uma nuvem brincalhona traz chuva de música!",
   "episodes_history": [
     {
       "ep": 1,
@@ -50,6 +50,18 @@
         "ppT24nvsXFs"
       ],
       "created_at": "2026-11-25T11:05:41.284991+00:00"
+    },
+    {
+      "ep": 5,
+      "title": "A Estrelinha que Tinha Medo do Escuro!",
+      "summary": "Tico e seus amigos encontram uma pequena estrela que caiu do céu por ter medo da escuridão. Com a ajuda da Dona Nina, a turma ensina que a noite é um momento de paz e brilho, ajudando a estrelinha a voltar para casa.",
+      "lesson": "Coragem, rotina de dormir calma e a beleza da noite",
+      "youtube_id": "QqrfJH9kl8E",
+      "short_ids": [
+        "SwnJqBB7Orw",
+        "Ml4z7sI4LOs"
+      ],
+      "created_at": "2026-11-26T11:02:59.353597+00:00"
     }
   ],
   "used_lessons": [],
