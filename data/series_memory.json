@@ -1,7 +1,7 @@
 {
   "season": 1,
-  "last_episode_number": 5,
-  "next_episode_hook": "No próximo episódio, uma nuvem brincalhona traz chuva de música!",
+  "last_episode_number": 6,
+  "next_episode_hook": "A turma encontra pegadas misteriosas que levam até uma fazenda muito barulhenta!",
   "episodes_history": [
     {
       "ep": 1,
@@ -62,6 +62,18 @@
         "Ml4z7sI4LOs"
       ],
       "created_at": "2026-11-26T11:02:59.353597+00:00"
+    },
+    {
+      "ep": 6,
+      "title": "A Chuva de Música na Ponte",
+      "summary": "Uma nuvem mágica traz gotas que fazem sons de instrumentos musicais ao cair na Vila das Cores. Tico e seus amigos precisam seguir o ritmo para cruzar a Ponte do Xilofone e descobrir de onde vem a melodia.",
+      "lesson": "Ritmo, sons de instrumentos musicais e coordenação motora",
+      "youtube_id": "EDNNTASoHsE",
+      "short_ids": [
+        "mjTpd85oxdo",
+        "rCaDOIDTqL8"
+      ],
+      "created_at": "2026-11-27T11:03:34.976113+00:00"
     }
   ],
   "used_lessons": [],
@@ -95,6 +107,41 @@
       "title": "A Estrelinha que Tinha Medo do Escuro!",
       "lesson": "Coragem, rotina de dormir calma e amizade",
       "hook_next": "No próximo episódio, uma nuvem brincalhona traz chuva de música!"
+    },
+    {
+      "ep": 6,
+      "title": "A Chuva de Música na Ponte!",
+      "lesson": "Ritmo, sons de instrumentos musicais e coordenação motora",
+      "main_setting": "Ponte Musical sobre o Rio das Notas",
+      "hook_next": "A turma encontra pegadas misteriosas que levam até uma fazenda muito barulhenta!"
+    },
+    {
+      "ep": 7,
+      "title": "O Coral da Fazendinha!",
+      "lesson": "Identificação de animais, sons da natureza e empatia pelos bichinhos",
+      "main_setting": "Fazendinha dos Sons Felizes",
+      "hook_next": "Dino Bip fica todo sujo de lama e descobre que a limpeza pode ser uma grande brincadeira!"
+    },
+    {
+      "ep": 8,
+      "title": "A Festa das Bolhas de Sabão!",
+      "lesson": "Higiene pessoal, importância do banho e lavar as mãos com alegria",
+      "main_setting": "Riacho das Bolhas Brilhantes",
+      "hook_next": "Um apito distante chama a turma para uma viagem mágica sobre trilhos coloridos!"
+    },
+    {
+      "ep": 9,
+      "title": "O Trem dos Números Coloridos!",
+      "lesson": "Contagem de 1 a 10 e reconhecimento de algarismos",
+      "main_setting": "Estação do Trem Arco-Íris",
+      "hook_next": "O trem sobe tão alto que chega em um lugar onde tudo é branquinho e gelado!"
+    },
+    {
+      "ep": 10,
+      "title": "Aventura na Montanha de Neve!",
+      "lesson": "Estações do ano, noção de temperatura (quente/frio) e cuidado mútuo",
+      "main_setting": "Montanha de Neve de Algodão",
+      "hook_next": "Lili encontra um cristal brilhante que aponta para uma caverna cheia de formas geométricas!"
     }
   ]
 }
