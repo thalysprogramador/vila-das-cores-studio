@@ -13,7 +13,7 @@ import {
   ThreeColorsPreviewV2,
   TransitionV2,
 } from "./OverlaysV2";
-import { SceneBackgroundV2 } from "./scenes/BackgroundsV2";
+import { DynamicScene } from "./scenes/DynamicScene";
 import { Beat, EpisodeTimeline } from "./types";
 
 const timeline = timelineRaw as unknown as EpisodeTimeline;
@@ -98,8 +98,9 @@ export const Episode1080p: React.FC = () => {
       {timeline.audioFile ? <Audio src={staticFile(timeline.audioFile)} /> : null}
       <svg width={1920} height={1080} viewBox="0 0 1280 720" style={{ display: "block" }}>
         <g transform={`translate(${cam.tx}, ${cam.ty}) scale(${cam.scale})`}>
-          <SceneBackgroundV2
+          <DynamicScene
             scene={displayBeat.scene}
+            customScene={timeline.customScenes?.[displayBeat.scene]}
             globalFrame={frame}
             beatFrame={beatFrame}
             fps={fps}

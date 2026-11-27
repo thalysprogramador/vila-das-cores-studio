@@ -3,7 +3,7 @@ import { AbsoluteFill, Audio, Sequence, interpolate, spring, staticFile, useCurr
 import timelineRaw from "../public/episode_timeline.json";
 import { CharacterRigV2 } from "./characters";
 import { ConfettiV2, InteractivePromptV2, MagicBasketV2, PopBadgeV2 } from "./OverlaysV2";
-import { SceneBackgroundV2 } from "./scenes/BackgroundsV2";
+import { DynamicScene } from "./scenes/DynamicScene";
 import { FONT_DISPLAY, FONT_UI, PALETTE } from "./theme";
 import { Beat, EpisodeTimeline } from "./types";
 
@@ -76,8 +76,9 @@ export const Short1080x1920: React.FC<ShortProps> = ({
 
         {/* Cena animada em alta definição focada no personagem ativo */}
         <g transform={`translate(${worldTx}, ${worldTy}) scale(${worldScale})`}>
-          <SceneBackgroundV2
+          <DynamicScene
             scene={beat.scene}
+            customScene={timeline.customScenes?.[beat.scene]}
             globalFrame={globalFrame}
             beatFrame={beatFrame}
             fps={fps}

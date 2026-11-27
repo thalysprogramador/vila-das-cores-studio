@@ -435,91 +435,138 @@ export const BrandingWatermark: React.FC = () => (
 );
 
 // =============================================================================
-// 4. THUMBNAIL PADRÃO DE ALTO CTR (1280 x 720 px — EPISÓDIO 1 / TEMPLATE)
+// 4. THUMBNAIL DINÂMICA V3 DE ALTO CTR (1280 x 720 px — ÚNICA PARA CADA EPISÓDIO!)
+//    Usa o CENÁRIO GERADO SOB MEDIDA do episódio + poses/expressões dinâmicas + paleta única!
 // =============================================================================
-export const EpisodeThumb: React.FC<{ episodeNumber?: number; badgeText?: string; subText?: string }> = ({
+export const EpisodeThumb: React.FC<{
+  episodeNumber?: number;
+  badgeText?: string;
+  subText?: string;
+  customBgSvg?: string | null;
+  accentColor?: string;
+  bgTop?: string;
+  bgBottom?: string;
+}> = ({
   episodeNumber = 1,
-  badgeText = "CADÊ AS CORES?!",
+  badgeText = "NOVA AVENTURA!",
   subText = "VILA DAS CORES!",
-}) => (
-  <AbsoluteFill>
-    <svg width={1280} height={720} viewBox="0 0 1280 720">
-      <defs>
-        <radialGradient id="thSky" cx="62%" cy="44%" r="65%">
-          <stop offset="0%" stopColor="#FFF8C9" />
-          <stop offset="45%" stopColor="#62CFFF" />
-          <stop offset="100%" stopColor="#1B85E5" />
-        </radialGradient>
-        <linearGradient id="thGrass" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#52E582" />
-          <stop offset="100%" stopColor="#1BB55B" />
-        </linearGradient>
-      </defs>
+  customBgSvg = null,
+  accentColor = "#FF4757",
+  bgTop = "#62CFFF",
+  bgBottom = "#1B85E5",
+}) => {
+  // Varia poses, emoções e formação dos personagens a cada episódio (nunca 2 thumbs iguais!)
+  const variant = Math.abs((episodeNumber || 1) - 1) % 4;
+  const ticoEmotion = variant === 0 ? "surprised" : variant === 1 ? "excited" : variant === 2 ? "laughing" : "happy";
+  const liliEmotion = variant === 0 ? "surprised" : variant === 1 ? "happy" : variant === 2 ? "excited" : "laughing";
+  const dinoEmotion = variant === 0 ? "excited" : variant === 1 ? "laughing" : variant === 2 ? "surprised" : "excited";
+  const showNina = variant === 1 || variant === 3;
 
-      <rect width={1280} height={720} fill="url(#thSky)" />
-      {/* Sunburst dramático de alto CTR */}
-      <g transform="translate(830, 340)" opacity={0.22}>
-        {Array.from({ length: 18 }).map((_, i) => (
-          <polygon key={i} points="0,0 -42,-920 42,-920" fill="#FFFFFF" transform={`rotate(${i * 20})`} />
-        ))}
-      </g>
+  return (
+    <AbsoluteFill>
+      <svg width={1280} height={720} viewBox="0 0 1280 720">
+        <defs>
+          <radialGradient id="thSkyDyn" cx="62%" cy="44%" r="68%">
+            <stop offset="0%" stopColor="#FFF8C9" />
+            <stop offset="48%" stopColor={bgTop} />
+            <stop offset="100%" stopColor={bgBottom} />
+          </radialGradient>
+          <linearGradient id="thGrassDyn" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#52E582" />
+            <stop offset="100%" stopColor="#1BB55B" />
+          </linearGradient>
+          <linearGradient id="thTopShade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#0D2B52" stopOpacity="0.34" />
+            <stop offset="55%" stopColor="#0D2B52" stopOpacity="0" />
+          </linearGradient>
+        </defs>
 
-      {/* Arco-Íris vibrante na metade direita */}
-      {RAINBOW.map((col, idx) => {
-        const r = 415 - idx * 24;
-        return (
-          <path
-            key={idx}
-            d={`M ${835 - r} 620 A ${r} ${r} 0 0 1 ${835 + r} 620`}
-            fill="none"
-            stroke={col}
-            strokeWidth={25}
-            strokeLinecap="round"
-          />
-        );
-      })}
+        {/* Fundo EXCLUSIVO do episódio (gerado pelo Diretor de Arte IA) ou gradiente temático */}
+        {customBgSvg ? (
+          <g>
+            <g dangerouslySetInnerHTML={{ __html: customBgSvg }} />
+            <rect width={1280} height={340} fill="url(#thTopShade)" />
+            {/* Sunburst sutil para pop de CTR */}
+            <g transform="translate(860, 320)" opacity={0.14}>
+              {Array.from({ length: 16 }).map((_, i) => (
+                <polygon key={i} points="0,0 -38,-900 38,-900" fill="#FFFFFF" transform={`rotate(${i * 22.5})`} />
+              ))}
+            </g>
+          </g>
+        ) : (
+          <g>
+            <rect width={1280} height={720} fill="url(#thSkyDyn)" />
+            <g transform="translate(830, 340)" opacity={0.22}>
+              {Array.from({ length: 18 }).map((_, i) => (
+                <polygon key={i} points="0,0 -42,-920 42,-920" fill="#FFFFFF" transform={`rotate(${i * 20})`} />
+              ))}
+            </g>
+            {RAINBOW.map((col, idx) => {
+              const r = 415 - idx * 24;
+              return (
+                <path
+                  key={idx}
+                  d={`M ${835 - r} 620 A ${r} ${r} 0 0 1 ${835 + r} 620`}
+                  fill="none"
+                  stroke={col}
+                  strokeWidth={25}
+                  strokeLinecap="round"
+                />
+              );
+            })}
+            <ellipse cx={640} cy={760} rx={920} ry={225} fill="url(#thGrassDyn)" />
+            <ProCloud x={1150} y={540} scale={1.1} />
+          </g>
+        )}
 
-      <ellipse cx={640} cy={760} rx={920} ry={225} fill="url(#thGrass)" />
-      <ProCloud x={1150} y={540} scale={1.1} />
+        <SparkleStar x={700} y={295} r={22} color="#FFFFFF" />
+        <SparkleStar x={1185} y={270} r={19} color="#FFF7AE" />
 
-      {/* 3 Esferas Mágicas brilhando à direita (chama o olhar imediatamente!) */}
-      {[
-        { x: 760, y: 405, c: "#FF4757" },
-        { x: 920, y: 345, c: "#FFD43B" },
-        { x: 1085, y: 415, c: "#1E90FF" },
-      ].map((o, i) => (
-        <g key={i} transform={`translate(${o.x}, ${o.y})`}>
-          <circle cx={0} cy={0} r={76} fill={o.c} opacity={0.32} />
-          <circle cx={0} cy={0} r={52} fill={o.c} stroke="#FFFFFF" strokeWidth={8} />
-          <circle cx={-16} cy={-16} r={14} fill="#FFFFFF" opacity={0.82} />
+        {/* Formação dinâmica dos personagens à esquerda — deixando a metade direita livre para os objetos da história! */}
+        {variant % 2 === 0 ? (
+          <>
+            <g transform="translate(142, 680) scale(1.38)">
+              <LiliV2 frame={12} emotion={liliEmotion} action="wave" viseme={0} blink={false} pupilDx={3} pupilDy={-1} headNod={-3} uid="th-lili" />
+            </g>
+            <g transform="translate(565, 690) scale(1.36) scale(-1, 1)">
+              <DinoV2 frame={14} emotion={dinoEmotion} action="jump" viseme={0} blink={false} pupilDx={-2} pupilDy={-1} headNod={2} uid="th-dino" />
+            </g>
+            <g transform="translate(352, 712) scale(1.66)">
+              <TicoV2 frame={10} emotion={ticoEmotion} action="wave" viseme={0} blink={false} pupilDx={3} pupilDy={-2} headNod={0} uid="th-tico" />
+            </g>
+          </>
+        ) : (
+          <>
+            <g transform="translate(152, 688) scale(1.42)">
+              <DinoV2 frame={14} emotion={dinoEmotion} action="celebrate" viseme={0} blink={false} pupilDx={3} pupilDy={-1} headNod={-2} uid="th-dino2" />
+            </g>
+            <g transform="translate(555, 685) scale(1.36) scale(-1, 1)">
+              <LiliV2 frame={12} emotion={liliEmotion} action="wave" viseme={0} blink={false} pupilDx={-2} pupilDy={-1} headNod={3} uid="th-lili2" />
+            </g>
+            <g transform="translate(356, 712) scale(1.66)">
+              <TicoV2 frame={10} emotion={ticoEmotion} action="celebrate" viseme={0} blink={false} pupilDx={3} pupilDy={-1} headNod={1} uid="th-tico2" />
+            </g>
+            {showNina && (
+              <g transform="translate(465, 295) scale(0.92)">
+                <NinaV2 frame={8} emotion="excited" action="fly_idle" viseme={0} blink={false} pupilDx={2} pupilDy={1} headNod={0} uid="th-nina" />
+              </g>
+            )}
+          </>
+        )}
+
+        {/* Selo EPISÓDIO XX no canto superior esquerdo */}
+        <g transform="translate(175, 76)">
+          <rect x={-138} y={-40} width={276} height={80} rx={40} fill="#FFD43B" stroke="#FFFFFF" strokeWidth={9} />
+          <rect x={-138} y={-40} width={276} height={80} rx={40} fill="none" stroke={OUTLINE} strokeWidth={4} />
+          <text x={0} y={14} textAnchor="middle" fontSize={40} fontWeight={800} fontFamily={FONT_DISPLAY} fill={OUTLINE}>
+            EPISÓDIO {episodeNumber}
+          </text>
         </g>
-      ))}
-      <SparkleStar x={845} y={290} r={22} color="#FFFFFF" />
-      <SparkleStar x={1025} y={285} r={18} color="#FFF7AE" />
 
-      {/* Personagens grandes em close-up à esquerda (sem sobrepor o rosto de ninguém!) */}
-      <g transform="translate(148, 675) scale(1.40)">
-        <LiliV2 frame={12} emotion="surprised" action="wave" viseme={0} blink={false} pupilDx={3} pupilDy={-1} headNod={-3} uid="th-lili" />
-      </g>
-      <g transform="translate(572, 685) scale(1.36) scale(-1, 1)">
-        <DinoV2 frame={14} emotion="excited" action="jump" viseme={0} blink={false} pupilDx={-2} pupilDy={-1} headNod={2} uid="th-dino" />
-      </g>
-      <g transform="translate(360, 705) scale(1.66)">
-        <TicoV2 frame={10} emotion="surprised" action="wave" viseme={0} blink={false} pupilDx={3} pupilDy={-2} headNod={0} uid="th-tico" />
-      </g>
-
-      {/* Selo EPISÓDIO 1 no canto superior esquerdo */}
-      <g transform="translate(175, 76)">
-        <rect x={-135} y={-40} width={270} height={80} rx={40} fill="#FFD43B" stroke="#FFFFFF" strokeWidth={9} />
-        <rect x={-135} y={-40} width={270} height={80} rx={40} fill="none" stroke={OUTLINE} strokeWidth={4} />
-        <text x={0} y={14} textAnchor="middle" fontSize={40} fontWeight={800} fontFamily={FONT_DISPLAY} fill={OUTLINE}>
-          EPISÓDIO {episodeNumber}
-        </text>
-      </g>
-
-      {/* Texto gigante de alto impacto no topo direito */}
-      <StickerText text={badgeText} x={895} y={168} size={82} fill="#FF4757" whiteBorder={26} darkBorder={8} />
-      <RainbowStickerWord text={subText} cx={900} y={258} size={72} whiteBorder={24} darkBorder={7.5} />
-    </svg>
-  </AbsoluteFill>
-);
+        {/* Título gigante de alto impacto no topo direito com cor dinâmica */}
+        <StickerText text={badgeText} x={885} y={148} size={78} fill={accentColor} whiteBorder={26} darkBorder={8} />
+        <RainbowStickerWord text={subText} cx={890} y={236} size={68} whiteBorder={24} darkBorder={7.5} />
+      </svg>
+    </AbsoluteFill>
+  );
+};

@@ -55,7 +55,21 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
           episodeNumber: timeline.episodeNumber || 1,
           badgeText: timeline.thumbnailBadge || "NOVA AVENTURA!",
-          subText: (timeline as unknown as { thumbnailSub?: string }).thumbnailSub || "VILA DAS CORES!",
+          subText: timeline.thumbnailSub || "VILA DAS CORES!",
+          customBgSvg:
+            (timeline.thumbnailSceneKey && timeline.customScenes?.[timeline.thumbnailSceneKey]?.svg_inner) ||
+            Object.values(timeline.customScenes || {}).find((s) => s?.svg_inner)?.svg_inner ||
+            null,
+          accentColor:
+            timeline.thumbnailAccent ||
+            (timeline.thumbnailSceneKey && timeline.customScenes?.[timeline.thumbnailSceneKey]?.accent_color) ||
+            "#FF4757",
+          bgTop:
+            (timeline.thumbnailSceneKey && timeline.customScenes?.[timeline.thumbnailSceneKey]?.thumb_bg_top) ||
+            "#62CFFF",
+          bgBottom:
+            (timeline.thumbnailSceneKey && timeline.customScenes?.[timeline.thumbnailSceneKey]?.thumb_bg_bottom) ||
+            "#1B85E5",
         }}
       />
     </>

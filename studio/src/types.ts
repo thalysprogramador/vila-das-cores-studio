@@ -82,11 +82,26 @@ export interface Beat {
   mouthFrames: number[];
 }
 
+export interface CustomSceneAsset {
+  location_name: string;
+  svg_inner: string | null;
+  fx: string;
+  sky_mood: string;
+  accent_color?: string;
+  thumb_bg_top?: string;
+  thumb_bg_bottom?: string;
+}
+
 export interface EpisodeTimeline {
   seriesTitle: string;
   episodeNumber: number;
   episodeTitle: string;
   thumbnailBadge?: string;
+  thumbnailSub?: string;
+  thumbnailSceneKey?: string;
+  thumbnailAccent?: string;
+  thumbnailEmotion?: Emotion;
+  customScenes?: Record<string, CustomSceneAsset>;
   fps: number;
   width: number;
   height: number;
