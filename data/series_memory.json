@@ -1,7 +1,7 @@
 {
   "season": 1,
-  "last_episode_number": 6,
-  "next_episode_hook": "A turma encontra pegadas misteriosas que levam até uma fazenda muito barulhenta!",
+  "last_episode_number": 7,
+  "next_episode_hook": "Dino Bip fica todo sujo de lama após a festa e descobre que a limpeza pode ser uma grande brincadeira!",
   "episodes_history": [
     {
       "ep": 1,
@@ -74,6 +74,18 @@
         "rCaDOIDTqL8"
       ],
       "created_at": "2026-11-27T11:03:34.976113+00:00"
+    },
+    {
+      "ep": 7,
+      "title": "O Coral da Fazendinha!",
+      "summary": "Tico e seus amigos seguem pegadas misteriosas e descobrem que os animais da fazenda perderam o ritmo de suas vozes. Com a ajuda da Dona Nina, a turma ensina cada bichinho a cantar seu som especial para formar um grande coral.",
+      "lesson": "Identificação de animais, sons da natureza e empatia pelos bichinhos",
+      "youtube_id": "g2Jib1_iJXQ",
+      "short_ids": [
+        "HWmoQj-8RCc",
+        "5WrtiMLUllA"
+      ],
+      "created_at": "2026-11-28T11:01:02.438002+00:00"
     }
   ],
   "used_lessons": [],
